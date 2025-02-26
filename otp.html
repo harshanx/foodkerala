@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Enter OTP</h2>
+        <p>An OTP has been sent to your registered mobile number.</p>
+        <form id="otpForm">
+            <input type="text" id="otpInput" placeholder="Enter OTP" required>
+            <button type="submit">Verify OTP</button>
+        </form>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        document.getElementById("otpForm").addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const otp = document.getElementById("otpInput").value;
+            const phone = localStorage.getItem("phone"); // Retrieve phone from localStorage
+
+            const response = await fetch("http://localhost:5000/verify-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ phone, otp })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                document.getElementById("message").innerText = "OTP Verified! Redirecting to login...";
+                setTimeout(() => {
+                    window.location.href = "login.html";
+                }, 2000);
+            } else {
+                document.getElementById("message").innerText = "Invalid OTP. Try again!";
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background and Page Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-image: url('bg1.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        .thankyou-header {
+            padding: 50px 20px;
+        }
+
+        .header-title {
+            font-size: 50px;
+            font-weight: bold;
+            color: #ffcc00;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .header-subtitle {
+            font-size: 24px;
+            margin-top: 10px;
+            color: white;
+        }
+
+        /* Thank You Message Styling */
+        .thankyou-container {
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin: 20px auto;
+            backdrop-filter: blur(10px);
+        }
+
+        .thankyou-message h2 {
+            font-size: 28px;
+            color: #ffcc00;
+        }
+
+        .thankyou-message p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        /* Button Styling */
+        .thankyou-btn-container {
+            margin-top: 20px;
+        }
+
+        .back-home-btn {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 18px;
+            background: #ff5e62;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-home-btn:hover {
+            background: #e64a19;
+        }
+
+        /* Footer */
+        .thankyou-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    
+     <center>  <h1 class="header-title">THANK YOU!</h1>
+        <p class="header-subtitle">Your delicious Kerala meal is on the way!</p>
+     </center>
+
+    <!-- Main Content -->
+    <div class="thankyou-container">
+        <div class="thankyou-message">
+            <h2>Order Confirmed!</h2>
+            <p>We have received your order and it will be delivered to your address shortly.</p>
+            
+            <!-- Display the order details -->
+            <p><strong>Dish Name:</strong> <span id="dish-name"></span></p>
+            <p><strong>Delivery Address:</strong> <span id="delivery-address"></span></p>
+            <p><strong>Payment Method:</strong> <span id="payment-method"></span></p>
+
+            <p><strong>Order Number:</strong> <span id="order-number"></span></p>
+            <p>We hope you enjoy your meal. Thank you for choosing us!</p>
+        </div>
+
+        <!-- Call-to-Action Button -->
+        <div class="thankyou-btn-container">
+            <a href="home.html" class="back-home-btn">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="thankyou-footer">
+        <p>&copy; 2025 Kerala Food Ordering | All Rights Reserved</p>
+    </footer>
+
+    <!-- JavaScript to handle the URL query parameters and trigger animations -->
+    <script>
+        window.onload = function () {
+            // Get the order details from the URL query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const dishName = urlParams.get('dish');
+            const address = urlParams.get('address');
+            const paymentMethod = urlParams.get('payment');
+
+            // Generate a random 5-digit order number
+            const orderNumber = Math.floor(10000 + Math.random() * 90000);
+
+            // Set the order details on the page
+            document.getElementById('dish-name').textContent = dishName ? dishName : "Not provided";
+            document.getElementById('delivery-address').textContent = address ? address : "Not provided";
+            document.getElementById('payment-method').textContent = paymentMethod ? paymentMethod : "Not provided";
+            document.getElementById('order-number').textContent = `#${orderNumber}`;
+        }
+    </script>
+</body>
+</html>

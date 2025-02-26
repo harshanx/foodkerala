@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body bgcolor="white">
+    <center>
+        <!-- Header -->
+        <header class="payment-header">
+            <h1 align="center">Complete Your Order</h1>
+            <p><hr> &nbsp;&nbsp;&nbsp;  you're just one step away from enjoying your delicious Kerala meal!</p>
+        </header>
+
+        <!-- Payment Form -->
+        <div class="payment-form-container">
+            <h2>Payment Information</h2>
+            <form align="center" action="thankyou.html" method="GET">
+                <div class="form-group">
+                    <label for="dish">Dish Name:</label>
+                    <input type="text" id="dish" name="dish" value="" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address</label>
+                    <textarea id="address" name="address" placeholder="Enter your delivery address..." required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment">Payment Method</label>
+                    <select id="payment" name="payment" required>
+                        <option value="credit-card">Credit Card</option>
+                        <option value="debit-card">Debit Card</option>
+                        <option value="upi">UPI</option>
+                        <option value="cash on delivery"> cash on delivery</option>
+                    </select>
+                </div>
+
+                <div class="form-group"><br>
+                    <button type="submit" class="buy-btn">Proceed to Payment</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <footer class="payment-footer">
+            <p>&copy; 2025 Kerala Food Ordering | All Rights Reserved</p>
+        </footer>
+
+        <script>
+            // Get the dish name from the URL query string
+            const urlParams = new URLSearchParams(window.location.search);
+            const dishName = urlParams.get('dish');
+            document.getElementById('dish').value = dishName; // Set the dish name in the input field
+        </script>
+    </center>
+</body>
+</html>

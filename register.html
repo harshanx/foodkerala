@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:disabled {
+            background: #ccc;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Register</h2>
+        <div id="step1">
+            <input type="text" id="phone" placeholder="Enter Mobile Number" required>
+            <button onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <div id="step2" class="hidden">
+            <input type="text" id="otp" placeholder="Enter OTP" required>
+            <button onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <div id="step3" class="hidden">
+            <input type="password" id="password" placeholder="Enter Password" required>
+            <button onclick="registerUser()">Register</button>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        async function sendOTP() {
+            const phone = document.getElementById("phone").value;
+            if (!phone) return alert("Please enter a phone number");
+
+            const response = await fetch("http://localhost:5000/send-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ phone })
+            });
+
+            const data = await response.json();
+            document.getElementById("message").innerText = data.message;
+
+            if (data.success) {
+                document.getElementById("step1").classList.add("hidden");
+                document.getElementById("step2").classList.remove("hidden");
+            }
+        }
+
+        async function verifyOTP() {
+            const phone = document.getElementById("phone").value;
+            const otp = document.getElementById("otp").value;
+
+            const response = await fetch("http://localhost:5000/verify-otp", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ phone, otp })
+            });
+
+            const data = await response.json();
+            document.getElementById("message").innerText = data.message;
+
+            if (data.success) {
+                document.getElementById("step2").classList.add("hidden");
+                document.getElementById("step3").classList.remove("hidden");
+            }
+        }
+
+        async function registerUser() {
+            const phone = document.getElementById("phone").value;
+            const password = document.getElementById("password").value;
+
+            const response = await fetch("http://localhost:5000/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ phone, password })
+            });
+
+            const data = await response.json();
+            document.getElementById("message").innerText = data.message;
+
+            if (data.success) {
+                alert("Registration Successful! Redirecting to login...");
+                window.location.href = "login.html";
+            }
+        }
+    </script>
+
+</body>
+</html>

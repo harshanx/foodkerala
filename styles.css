@@ -1,0 +1,669 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f8f8;
+    line-height: 1.6;
+}
+
+/* Header Section (Hero) */
+.hero {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn-primary {
+    background-color: #ff8c00;
+    color: #fff;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn-primary:hover {
+    background-color: #e07500;
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Highlights Section */
+.highlights {
+    padding: 50px 20px;
+    background-color: #f2f2f2;
+    text-align: center;
+}
+
+.highlights h2 {
+    font-size: 2rem;
+    color: #444;
+    margin-bottom: 30px;
+}
+
+.highlight-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    width: 300px;
+    text-align: center;
+}
+
+.highlight-item img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.highlight-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Call to Action Section */
+.cta {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+.cta h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.cta .btn-secondary {
+    background-color: #fff;
+    color: #ff8c00;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.cta .btn-secondary:hover {
+    background-color: #e07500;
+    color: #fff;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+/* Styling for Hero Section */
+.hero {
+    background-image: url('bg1.jpg'); /* Path to your image */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 100vh; /* Sets the height of the hero section to fill the screen */
+    display: flex; /* Aligns content inside */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    position: relative;
+    color: #fff; /* Sets text color to white */
+    text-align: center;
+}
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Menu Item Container */
+.menu-item {
+    display: flex; /* Enables flexbox for alignment */
+    flex-direction: column; /* Ensures content stacks vertically (image, text, price) */
+    align-items: center; /* Centers the image and content horizontally */
+    text-align: center; /* Centers text horizontally */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px; /* Adds some spacing inside the container */
+}
+
+/* Menu Item Image */
+.menu-item img {
+    width: 80%; /* Sets the image width to 80% of the container */
+    height: auto; /* Maintains the aspect ratio */
+    object-fit: cover; /* Crops if necessary to fit the dimensions without distortion */
+    margin-bottom: 15px; /* Adds spacing below the image */
+    border-radius: 5px; /* Optional: Adds rounded corners */
+}
+/* General Body Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+}
+
+/* Menu Header */
+header.menu-header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ff8c00;
+    color: #fff;
+}
+
+header.menu-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+header.menu-header p {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Menu Grid Container */
+.menu-container {
+    padding: 50px 20px;
+}
+
+/* Responsive Grid Layout */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates responsive columns */
+    gap: 20px; /* Space between the grid items */
+}
+
+/* Individual Menu Item */
+.menu-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 15px;
+}
+
+.menu-item img {
+    width: 100%; /* Ensures image fills the container */
+    height: 200px; /* Fixed height for all images */
+    object-fit: cover; /* Maintains aspect ratio while covering the space */
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.menu-item h3 {
+    font-size: 1.5rem;
+    margin: 15px 0 10px;
+    color: #ff8c00;
+}
+
+.menu-item p {
+    font-size: 1rem;
+    margin: 10px;
+}
+
+.menu-item .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Hover Effects for Menu Items */
+.menu-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: #333;
+    color: #fff;
+}
+/* Styling the Buy Now Button */
+.buy-btn {
+    background-color: #ff8c00;  /* Kerala-themed color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hover effect for the button */
+.buy-btn:hover {
+    background-color: #e07b00;  /* Darker shade when hovered */
+    transform: translateY(-3px);  /* Slight lift effect */
+}
+
+/* Focus effect for accessibility */
+.buy-btn:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff8c00;
+}
+/* Styling the 'Back to Home' button */
+.back-btn {
+    display: inline-block;
+    background-color: #4CAF50;  /* Green color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #45a049;  /* Darker green on hover */
+    transform: translateY(-3px);  /* Slight lift effect */
+}
+
+/* Optional: Center the button */
+.back-to-home {
+    text-align: center;
+    margin-top: 20px;
+}
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: 300;
+}
+
+/* Payment Form Container */
+.payment-form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.payment-form-container h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+textarea {
+    height: 120px;
+    resize: none;
+}
+
+select {
+    background-color: #f9f9f9;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Footer */
+.payment-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .payment-form-container {
+        width: 90%;
+        padding: 25px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Animation for Form */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f4f4f9, #e0f7fa);
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header Section */
+.thankyou-header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 2.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeInHeader 1s ease-out;
+}
+
+.header-title {
+    opacity: 0;
+}
+
+.header-subtitle {
+    opacity: 0;
+    animation: fadeInSubtitle 1s ease-out 0.5s;
+}
+
+/* Header Animations */
+@keyframes fadeInHeader {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSubtitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Thank You Message Container */
+.thankyou-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeInMessage 1.2s ease-out;
+}
+
+.thankyou-message h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.thankyou-message p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Message Animation */
+@keyframes fadeInMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Button Section */
+.thankyou-btn-container {
+    margin-top: 30px;
+}
+
+.back-home-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.back-home-btn:hover {
+    background-color: #45a049;
+    transform: translateY(-3px);
+}
+
+/* Button Animation */
+@keyframes animateBtn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Footer */
+.thankyou-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    font-size: 0.9rem;
+}
+
+/* Button Animation on load */
+.animate-btn {
+    animation: animateBtn 1s ease-out 1.5s forwards;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .thankyou-header h1 {
+        font-size: 2rem;
+    }
+
+    .thankyou-message p {
+        font-size: 1rem;
+    }
+
+    .back-home-btn {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+}
+
+.hero {
+    background-image: url('bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    color: #fff;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.owner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-top: 2px solid #ddd;
+}
+
+.owner img {
+    width: 200px;
+    height: 250px;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+    font-size: 50px;
+    font-weight: bold;
+    color: #ffcc00;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: none !important; /* Prevents any animation from hiding it */
+}
+
+.header-subtitle {
+    font-size: 24px;
+    margin-top: 10px;
+    color: white;
+    animation: none !important; /* Ensures it does not fade away */
+}
+.thankyou-header {
+    background: none; /* Remove any background color */
+    text-align: center;
+    padding: 50px 0;
+}
+
+.header-title {
+    font-size: 60px; /* Make it bigger */
+    font-weight: bold;
+    color: white; /* Change this if the background is white */
+    text-shadow: 3px 3px 10px rgba(231, 218, 218, 0.8); /* Add a shadow for visibility */
+}
+
+.header-subtitle {
+    font-size: 24px;
+    color: #ffcc00; /* Bright color for contrast */
+    font-weight: bold;
+    margin-top: 10px;
+}

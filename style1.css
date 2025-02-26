@@ -1,0 +1,89 @@
+/* Apply styles only for login page */
+body.login-page {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* Login container styling */
+.login-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    width: 350px;
+    backdrop-filter: blur(10px);
+}
+
+/* Heading */
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Input fields */
+.login-container input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+}
+
+/* Placeholder text */
+.login-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Login button */
+.login-container button {
+    width: 100%;
+    padding: 12px;
+    background: #ff5e62;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+.login-container button:hover {
+    background: #e64a19;
+}
+
+/* Links */
+.login-container a {
+    display: block;
+    margin-top: 10px;
+    color: #ff9966;
+    text-decoration: none;
+}
+
+/* Link hover */
+.login-container a:hover {
+    text-decoration: underline;
+}
+.login-container input[type="password"] {
+    color: black; /* Change text color to black */
+    background: rgba(255, 255, 255, 0.8); /* Lighten the background for better visibility */
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 16px;
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Kerala Food Hub</title>
+    <link rel="stylesheet" href="styles1.css">
+    <style>
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+        .login-container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            width: 350px;
+            backdrop-filter: blur(10px);
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .phone-input, .password-input {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+        }
+        .phone-input select, .phone-input input, .password-input input {
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 16px;
+            flex: 1;
+            outline: none;
+        }
+        .phone-input select {
+            border-radius: 8px 0 0 8px;
+        }
+        .password-input input {
+            border-radius: 8px;
+        }
+        .password-toggle {
+            cursor: pointer;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+        .login-container input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        .login-container button {
+            width: 100%;
+            padding: 12px;
+            background: #ff5e62;
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+        .login-container button:hover {
+            background: #e64a19;
+        }
+        .login-container a {
+            display: block;
+            margin-top: 10px;
+            color: #ff9966;
+            text-decoration: none;
+        }
+        .login-container a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login to Kerala Food Hub</h2>
+        <form onsubmit="redirectToHome(event)">
+            <div class="phone-input">
+                <select disabled>
+                    <option value="+91">+91 🇮🇳</option>
+                </select>
+                <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}" title="Enter a valid 10-digit phone number">
+            </div>
+            <div class="password-input">
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <span class="password-toggle" onclick="togglePassword()">👁️</span>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#">Forgot Password?</a>
+        <a href="register.html">Create an Account</a>
+    </div>
+
+    <script>
+        function togglePassword() {
+            let passwordField = document.getElementById("password");
+            passwordField.type = passwordField.type === "password" ? "text" : "password";
+        }
+
+        function redirectToHome(event) {
+            event.preventDefault(); // Prevent form submission
+            window.location.href = "home.html"; // Redirect to home.html
+        }
+    </script>
+</body>
+</html>
